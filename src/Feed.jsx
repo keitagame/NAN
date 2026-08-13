@@ -15,9 +15,11 @@ export default function Feed() {
   }, []);
 
   return (
-    <div>
+    <div style={{ padding: 20 }}>
       {events.map((ev) => (
-        <div key={ev.id}>{ev.content}</div>
+        <div key={ev.id} style={{ marginBottom: 10 }}>
+          {ev.content}
+        </div>
       ))}
     </div>
   );

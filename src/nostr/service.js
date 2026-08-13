@@ -8,7 +8,7 @@ export class NostrService {
   }
 
   generateKeys() {
-    const sk_bytes = secp.utils.randomPrivateKey();
+    const sk_bytes = secp.utils.randomPrivateKeyBytes();   // v2
     this.sk = secp.utils.bytesToHex(sk_bytes);
     this.pk = getPublicKey(this.sk);
 

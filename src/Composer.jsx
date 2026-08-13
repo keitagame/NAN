@@ -1,6 +1,7 @@
-import { Button, TextField } from "@mui/material";
-import { relays } from "./nostr/relayPool";
-import { useState } from "react"; 
+import { useState } from "react";
+import { Button, TextField, Box } from "@mui/material";
+import { pool, relays } from "./nostr/relayPool";
+
 export default function Composer({ nostr }) {
   const [text, setText] = useState("");
 
@@ -13,16 +14,18 @@ export default function Composer({ nostr }) {
   };
 
   return (
-    <>
+    <Box sx={{ p: 2 }}>
       <TextField
         fullWidth
+        multiline
+        minRows={3}
         label="Write a note"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <Button variant="contained" onClick={send}>
+      <Button sx={{ mt: 2 }} variant="contained" fullWidth onClick={send}>
         Publish
       </Button>
-    </>
+    </Box>
   );
 }
