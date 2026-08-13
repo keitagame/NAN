@@ -1,5 +1,6 @@
 services:
-  - type: static
+  - type: web
     name: nostr-client
+    plan: free
     buildCommand: npm install && npm run build
-    publish: dist
+    startCommand: node server.js
