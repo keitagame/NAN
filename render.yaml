@@ -2,5 +2,6 @@ services:
   - type: web
     name: nostr-client
     plan: free
+    runtime: node 
     buildCommand: npm install && npm run build
     startCommand: npm run dev
