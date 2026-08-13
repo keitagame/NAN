@@ -1,12 +1,5 @@
 services:
   - type: web
     name: nostr-client
-    env: static
-    plan: free
     buildCommand: npm install && npm run build
-    
-    staticPublishPath: dist
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    publish: dist
