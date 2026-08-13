@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: static
     name: nostr-client
     buildCommand: npm install && npm run build
     publish: dist
