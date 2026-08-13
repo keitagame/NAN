@@ -2,6 +2,7 @@ services:
   - type: static
     name: nostr-client
     env: static
+    plan: free
     buildCommand: npm install && npm run build
     publish: dist
     staticPublishPath: dist
