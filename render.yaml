@@ -4,4 +4,4 @@ services:
     plan: free
     runtime: node 
     buildCommand: npm install && npm run build
-    startCommand: npm run dev
+    startCommand: npm run start
