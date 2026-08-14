@@ -6,11 +6,13 @@ const __dirname = path.resolve();
 
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.get("*", (req, res) => {
+// SPA fallback
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 const port = process.env.PORT || 3000;
+
 app.listen(port, () => {
   console.log("Server running on port", port);
 });
